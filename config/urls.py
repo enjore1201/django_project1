@@ -22,7 +22,7 @@ from todo.views import todo_list, todo_info
 from users import views as user_views
 
 urlpatterns = [
-    path('t 밑줄 오류가 발생odo/', todo_list, name='todo_list'),
+    path('todo/', todo_list, name='todo_list'),
     path('todo/<int:todo_id>/', todo_info, name='todo_info'),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
