@@ -128,5 +128,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-LOGIN_REDIRECT_URL = "/todo/"
+LOGIN_REDIRECT_URL = "/cbv/todo"
 LOGOUT_REDIRECT_URL = '/accounts/login/'
