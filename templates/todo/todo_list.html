@@ -132,34 +132,8 @@
         {% endfor %}
     </ul>
     <!-- 페이지네이션 -->
-    <div class="pagination">
-        {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; First</a>
-            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
-        {% else %}
-            <p>&laquo; First</p>
-            <p>Previous</p>
+        {% include 'todo/pagination.html' %}
         {% endif %}
-
-        {% for num in page_obj.paginator.page_range %}
-            {% if num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
-                {% if num == page_obj.number %}
-                    <span class="active" style="border-radius: 4px; background-color: #fff122">{{ num }}</span>
-                {% else %}
-                    <a href="?page={{ num }}">{{ num }}</a>
-                {% endif %}
-            {% endif %}
-        {% endfor %}
-
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">Next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
-        {% else %}
-            <p>Next</p>
-            <p>Last &raquo;</p>
-        {% endif %}
-    </div>
-    {% endif %}
 </div>
 
 {% endblock %}
