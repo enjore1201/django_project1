@@ -75,12 +75,13 @@ input[type="text"], input[type="date"], textarea {
     background-color: #0056b3;
 }
 </style>
-<div class="container" style="margin-top: 15px">
+<div class="container" style="margin-top: 50px; width: 40vw">
     {% if request.user.is_authenticated %}
-        <form class="todo-update-form" method="POST">
+        <form class="form-control" method="POST" enctype="multipart/form-data">
+            <h2 class="title">Todo 수정하기</h2>
             {% csrf_token %}
             {{ form.as_p }}
-            <button class="update-button">Update</button>
+            <button class="btn btn-primary">Update</button>
         </form>
     {% endif %}
 </div>
